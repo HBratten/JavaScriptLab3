@@ -1,11 +1,15 @@
+"use strict";
+
 class AddressBook {
   constructor() {
     this.contacts = [];
   }
+
   add(name, email, phone, relation) {
     let newContact = new Contact(name, email, phone, relation);
     this.contacts.push(newContact);
   }
+
   delete(name) {
     const index = this.contacts.findIndex(contact => {
       return contact.name === name;
@@ -21,6 +25,7 @@ class AddressBook {
     }
   }
 }
+
 class Contact {
   constructor(name, email, phone, relation) {
     this.name = name;
@@ -31,10 +36,11 @@ class Contact {
 }
 
 const addressBook = new AddressBook();
-addressBook.add("Mom", "rjupton5@aol.com", 5857641097, "Parent");
-addressBook.add("Dad", "rupton@costsegs.com", 5857505799, "Parent");
-addressBook.add("Caroline", "uptonccc@gmail.com", 5857643479, "Sibling");
-addressBook.add("Danny", "dcu5001@gmail.com", 5857643962, "Sibling");
-addressBook.add("Connor", "connorabratten@gmail.com", 2489307122, "Spouse");
-addressBook.delete();
+addressBook.add("Mom", "something@aol.com", 5857641097, "Parent");
+addressBook.add("Dad", "somethingelse@aol.com", 5857505799, "Parent");
+addressBook.add("Caroline", "something@gmail.com", 5857643479, "Sibling");
+addressBook.add("Danny", "somethingelse@gmail.com", 5857643962, "Sibling");
+addressBook.add("Connor", "connor@gmail.com", 2489307122, "Spouse");
+addressBook.print();
+addressBook.delete("Danny");
 addressBook.print();
